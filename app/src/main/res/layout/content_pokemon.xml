@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="msk.mylists.PokemonActivity"
+    tools:showIn="@layout/activity_pokemon"
+    >
+  <RelativeLayout
+      android:id="@+id/rootRelativeLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      >
+    <ImageView
+        android:id="@+id/pokemonImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <LinearLayout
+        android:id="@+id/statsLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@id/pokemonImage"
+        android:orientation="vertical"
+        >
+      <TextView
+          android:id="@+id/pokemonType"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:background="#FFEF6B"
+          android:padding="6dp"
+          android:text="Electric"
+          />
+      <LinearLayout
+          android:id="@+id/concreteStatsLinear"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="HP"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+          <ProgressBar
+              android:id="@+id/progressBar"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorAccent"
+              style="?android:attr/progressBarStyleHorizontal"
+              />
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="35"
+              android:textColor="#FAFAFA"
+              android:textStyle="bold"
+              />
+        </RelativeLayout >
+      </LinearLayout >
+
+
+    </LinearLayout >
+
+    <TextView
+        android:id="@+id/descriptionShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pokemonImage"
+        android:layout_marginBottom="4dp"
+        android:text="Mouse Pokemon"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/longDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descriptionShort"
+        android:layout_marginBottom="16dp"
+        android:text="Long description"
+        />
+
+    <TextView
+        android:id="@+id/profileTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/longDescription"
+        android:background="#FFE744"
+        android:padding="4dp"
+        android:text="Profile"
+        android:textColor="#FAFAFA"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileTextView"
+        android:layout_marginTop="8dp"
+        android:id="@+id/grid"
+        >
+      <include layout="@layout/pokemon_grid" />
+    </LinearLayout >
+
+    <LinearLayout
+        android:id="@+id/damageWhenAttacked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/grid"
+        >
+      <include layout="@layout/pokemon_damage"/>
+    </LinearLayout >
+
+  </RelativeLayout >
+
+
+</android.support.v4.widget.NestedScrollView >
